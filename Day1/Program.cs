@@ -1,6 +1,4 @@
-﻿using System.Data;
-
-namespace Day1
+﻿namespace Day1
 {
     class Program
     {
