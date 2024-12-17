@@ -8,6 +8,9 @@
             string data = input.Readfile();
             int distancesum = CalcDistance.Distancediff(data);
             Console.WriteLine(distancesum);
+
+            int similiaryscore = CalcSimilarity.SimilarityScore(data);
+            Console.WriteLine(similiaryscore);
         }
     }
 }
