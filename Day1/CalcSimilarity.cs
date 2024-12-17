@@ -31,7 +31,7 @@ public class CalcSimilarity
                         count++;
                     }
                 }
-                score = score + ( value*count);
+                score += ( value*count);
             }
         return score;
     }
