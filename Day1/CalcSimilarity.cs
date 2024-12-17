@@ -2,12 +2,13 @@ using System;
 
 namespace Day1;
 
-public class CalcDistance
+public class CalcSimilarity
 {
-    public static int Distancediff(string data)
+    public static int SimilarityScore(string data)
     {
+        int score = 0;
             List<int> left = [];
-            List<int> right = new List<int>();
+            List<int> right = [];
             string[] datarows = data.Trim().Split('\n');
             foreach (string row in datarows)
             {
@@ -19,17 +20,20 @@ public class CalcDistance
                 left.Add(number1);
                 right.Add(number2);
             }
-            left.Sort();
-            right.Sort();
 
-            int sum = 0;
-
-            for (int i = 0; i <left.Count; i++)
+            foreach (int value in left)
             {
-                int diff = Math.Abs(left[i] - right[i]);
-                sum += diff;
+                int count = 0;
+                foreach (int number in right)
+                {
+                    if (value == number)
+                    {
+                        count++;
+                    }
+                }
+                score = score + ( value*count);
             }
-        return sum;
+        return score;
     }
 
 }
